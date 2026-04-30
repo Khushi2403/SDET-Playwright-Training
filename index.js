@@ -8,22 +8,22 @@ console.log("String:", str);
 console.log("Length of string:", str.length);
 console.log("Uppercase:", str.toUpperCase());
 console.log("Lowercase:", str.toLowerCase());
-console.log("Substring (0-5):", str.substring(0, 5));
+console.log("Substring (0-5):", str.substring(0, 5)); // 0 - first character, 5 - up to but not including the 5th character
 
 // Mathematical operations
 console.log("Addition:", a + b);
 console.log("Subtraction:", a - b);
 console.log("Multiplication:", a * b);
 console.log("Division:", a / b);
-console.log("Remainder:", a % b);
+console.log("Remainder:", a % b); // Remainder (Modulo)
 
-// Logical operations
-console.log("a > b:", a > b);
-console.log("a < b:", a < b);
-console.log("a == b:", a == b);
-console.log("a != b:", a != b);
-console.log("a >= b:", a >= b);
-console.log("a <= b:", a <= b);
+// Logical operations --> bool
+console.log("a > b:", a > b); // F
+console.log("a < b:", a < b); // T
+console.log("a == b:", a == b); // F === Strict equality (checks value and type)
+console.log("a != b:", a != b); // T
+console.log("a >= b:", a >= b); // F
+console.log("a <= b:", a <= b); // T
 
 let obj = {
     name: "Alice",
@@ -107,4 +107,13 @@ switch(choice) {
         break;  
     default:
         console.log("Invalid choice");
+}
+
+console.log(typeof choice, typeof a, typeof b, typeof str, typeof obj, typeof arr); // typeof operator to check the type of variables
+for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+    if(typeof element === "number") {
+        console.log(element, "is a number");
+    }
+    // console.log(element, typeof element); 
 }
