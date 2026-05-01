@@ -50,9 +50,9 @@ console.log("Cleaned string:", cleaned);
 
 let cart = ["Bread", "Butter", "Cheese"];
 
-cart.push("Milk");        // add end
-cart.unshift("Eggs");     // add beginning
-cart.pop();               // remove last item
+cart.push("Milk");        
+cart.unshift("Eggs");     
+cart.pop();               
 
 console.log("Cart:", cart);
 
