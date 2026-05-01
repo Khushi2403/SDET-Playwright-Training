@@ -52,7 +52,7 @@ let cart = ["Bread", "Butter", "Cheese"];
 
 cart.push("Milk");        // add end
 cart.unshift("Eggs");     // add beginning
-cart.pop();               // remove last item (Milk)
+cart.pop();               // remove last item
 
 console.log("Cart:", cart);
 
