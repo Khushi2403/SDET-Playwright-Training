@@ -15,7 +15,7 @@ console.log("Addition:", a + b);
 console.log("Subtraction:", a - b);
 console.log("Multiplication:", a * b);
 console.log("Division:", a / b);
-console.log("Remainder:", a % b); // Remainder (Modulo)
+console.log("Remainder:", a % b); 
 
 // Logical operations --> bool
 console.log("a > b:", a > b); // F
