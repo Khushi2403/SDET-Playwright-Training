@@ -86,3 +86,27 @@ console.log(colors); // ["red", "green", "blue"]
 // console.log(colors.splice(Math.floor(Math.random() * (colors.length - 2)), 1));
 // let str = "Hello World";
 // console.log(str.slice(0, 5)); // "Hello"
+
+const total = prices.reduce((acc, curr) => { return acc + curr }, 0);
+// 0 + 10 = 10
+// 10 + 20 = 30
+// 30 + 30 = 60
+// 60 + 40 = 100
+console.log(total);
+// console.log("Sum:", s);
+
+const fruitBasket = ['apple', 'banana', 'cherry', 'apple', 'apple', 'banana', 'pineapple']; // apple: 3, banana: 3, cherry: 1, pineapple: 1
+const tally = fruitBasket.reduce((acc, fruit) => {
+    acc[fruit] = (acc[fruit] || 0) + 1;
+    return acc;
+}, {}); // intial value of acc is an empty object
+console.log(tally);
+// {}
+// {apple: 3, banana: 2, cherry: 1, pineapple: 1}
+
+// function b(a, c) {
+//     return a * c * 2;
+// }
+// function a(b, c) {
+//     return b(a(1, 2), c);
+// }
