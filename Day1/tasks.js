@@ -14,7 +14,7 @@ console.log("Swapped values:", a, b);
 
 function checkType(input) {
     if (typeof input === "number") {
-        console.log("This is a number");
+        console.log("This is a  number");
     } else if (typeof input === "string") {
         console.log("This is a string");
     } else {
