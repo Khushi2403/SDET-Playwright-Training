@@ -7,7 +7,7 @@ console.log(d);
 
 // template literals
 let e='Hello ${a}, ${b} and ${c}!';
-let f = `The length of a is ${a.length * 2}`; // Using template literals to get length
+let f = `The length of a is ${a.length * 2 }`; // Using template literals to get length
 // console.log(e);
 // console.log(f);
 
