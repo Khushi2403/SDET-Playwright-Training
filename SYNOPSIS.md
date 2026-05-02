@@ -4,6 +4,7 @@ SDET Playwright Training
 
 🔹 Types:let,var
 
+🔹Example-
 let name = "Khushi";
 var age = 22;
 
@@ -15,6 +16,7 @@ Number (integer / float / decimal)
 Boolean
 Character
 
+🔹Example-
 let name = "Khushi";
 let age = 22;
 let price = 99.99;
@@ -29,6 +31,7 @@ Arithmetic: + - * /
 Comparison: > < == 
 Logical: &&
 
+🔹Example-
 let a = 10;
 let b = 20;
 
@@ -39,6 +42,8 @@ console.log(a > b);
 4. ARRAYS-Stores multiple values in one variable.
 
 🔹 Methods:push(),pop(),index access
+
+🔹Example-
 let arr = [10, 20, 30];
 
 arr.push(40);
@@ -48,6 +53,7 @@ console.log(arr[0]);
 
 5. FUNCTIONS-Reusable block of code.
 
+🔹Example-
 function add(a, b) {
     return a + b;
 }
@@ -56,12 +62,14 @@ console.log(add(10, 20));
 
 6. ARROW FUNCTION-Short syntax for functions.
 
+🔹Example-
 const add = (a, b) => a + b;
 
 console.log(add(10, 20));
 
 7. TEMPLATE LITERALS-Used for string formatting.
 
+🔹Example-
 let name = "Khushi";
 let age = 22;
 
@@ -70,6 +78,7 @@ console.log(`My name is ${name} and age is ${age}`);
 
 8. TYPE CASTING-Converting one type into another.
 
+🔹Example-
 let num = "10";
 let converted = Number(num);
 
@@ -79,6 +88,7 @@ console.log(converted + 5);
 
 🔹 Types:if,if-else,if-else-if
 
+🔹Example-
 let marks = 75;
 if (marks >= 90) {
     console.log("A");
@@ -91,6 +101,7 @@ if (marks >= 90) {
 10. LOOPS-Used for repetition.
 
 🔹 Type:for loop,while,do while,for each
+🔹Example-
 for (let i = 1; i <= 10; i++) {
     console.log(i);
 }
@@ -99,6 +110,7 @@ for (let i = 1; i <= 10; i++) {
 11. LOGICAL OPERATORS-Combining conditions.
 
 🔹 Type:&& , !,||
+🔹Example-
 let a = 10, b = 20, c = 15;
 
 if (a > b && a > c) {
@@ -119,3 +131,97 @@ console.log(Math.floor(-4.9));  // -5
 console.log(Math.ceil(4.1));    // 5
 console.log(Math.ceil(4.9));    // 5
 console.log(Math.ceil(-4.1));   // -4
+
+14. ARRAY REDUCE METHOD (Advanced Arrays)-Used to reduce an array into a single value (sum, count, object, etc.)
+
+🔹 Syntax:
+
+array.reduce((accumulator, currentValue) => {
+    // logic
+    return accumulator;
+}, initialValue);
+
+
+🔹Example 1: Counting frequency of elements
+const fruitBasket = ['apple', 'banana', 'cherry', 'apple', 'apple', 'banana', 'pineapple'];
+
+const tally = fruitBasket.reduce((acc, fruit) => {
+    acc[fruit] = (acc[fruit] || 0) + 1;
+    return acc;
+}, {});
+console.log(tally);
+
+🔹Output:
+{ apple: 3, banana: 2, cherry: 1, pineapple: 1 }
+
+
+15. LOGIN PAGE (HTML + CSS + JS)- Used to create a simple login UI and handle basic validation.
+
+🔹HTML (Structure)
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <p id="msg"></p>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
+
+🔹CSS (Styling)
+body {
+    font-family: Arial;
+    background: #f2f2f2;
+}
+
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 8px 20px;
+    background: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+🔹JavaScript (Logic)
+function login() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    if (username === "admin" && password === "1234") {
+        document.getElementById("msg").innerText = "Login Successful";
+        document.getElementById("msg").style.color = "green";
+    } else {
+        document.getElementById("msg").innerText = "Invalid Credentials";
+        document.getElementById("msg").style.color = "red";
+    }
+}
+
