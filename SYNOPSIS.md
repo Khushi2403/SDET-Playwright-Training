@@ -279,5 +279,33 @@ First .then() converts response into JSON.
 Second .then() filters only even ID records.
 Third .then() modifies the title of each object.
 Fourth .then() prints the final data.
-.catch() handles errors if API fails.
+.catch() handles errors if API fails.                            
+
+17 . Working with Public APIs using JavaScript (Fetch, Promises, Filter, Map)
+
+🔹 In this task, multiple public REST APIs were used to practice real-time data fetching using JavaScript. The objective was to understand how to:
+
+1.Fetch live data from APIs using fetch()
+2.Handle asynchronous operations using Promises
+3.Process API responses using filter() and map()
+
+🔹 APIs Used
+1.Catfact Ninja
+2.PokeAPI
+3.Open Notify
+4.ZenQuotes
+5.Hipolabs Universities API
+6.Dog API
+7.CoinGecko
+8.Random User Generator
+9.REST Countries
+10.JSONPlaceholder
+
+🔹 Sample Code Pattern Used
+fetch("API_URL")
+  .then(res => res.json())
+  .then(data => data.filter(condition))
+  .then(data => data.map(transformation))
+  .then(console.log)
+  .catch(console.error);
 
