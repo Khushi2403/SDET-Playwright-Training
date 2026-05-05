@@ -255,3 +255,29 @@ getData()
   .catch((error) => {
       console.error("Error:", error);
   });
+
+  17.Fetch API with Promise Chaining
+
+JavaScript provides the Fetch API to get data from servers (APIs).
+fetch() returns a Promise, which allows us to handle asynchronous API responses using .then() and .catch().
+
+This method is commonly used in automation testing tools like Playwright to validate API responses.
+
+🔹Example:fetching data from api
+
+    fetch("https://jsonplaceholder.typicode.com/todos")
+    .then(res => res.json())        // convert response to JSON
+    .then(data => data.filter(d => d.id % 2 === 0))  // filter even IDs
+    .then(data => data.map(d => (d.title = "Khushi " + d.title))) // modify title
+    .then(data => console.log(data)) // print result
+    .catch(error => console.error("Error fetching data:", error));
+
+  🔹  Explanation:
+
+fetch() sends request to API.
+First .then() converts response into JSON.
+Second .then() filters only even ID records.
+Third .then() modifies the title of each object.
+Fourth .then() prints the final data.
+.catch() handles errors if API fails.
+
