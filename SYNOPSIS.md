@@ -225,3 +225,33 @@ function login() {
     }
 }
 
+
+16.Promises and Asynchronous JavaScript
+
+In JavaScript, many operations such as API calls, file reading, and timers do not execute immediately. These are called asynchronous operations. To handle them properly, JavaScript provides a feature called Promise.
+
+A Promise represents a value that may be available now, in the future, or never. It has three states:
+
+Pending – Initial state
+Resolved (Fulfilled) – Operation completed successfully
+Rejected – Operation failed
+
+Promises help avoid callback hell and make asynchronous code easier to read and manage.
+
+🔹Example using Promise with setTimeout:
+
+function getData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Data received");
+        }, 2000);
+    });
+}
+
+getData()
+  .then((data) => {
+      console.log(data);
+  })
+  .catch((error) => {
+      console.error("Error:", error);
+  });
