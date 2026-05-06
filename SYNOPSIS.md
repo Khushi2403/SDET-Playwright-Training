@@ -226,7 +226,7 @@ function login() {
 }
 
 
-16.Promises and Asynchronous JavaScript
+16. Promises and Asynchronous JavaScript
 
 In JavaScript, many operations such as API calls, file reading, and timers do not execute immediately. These are called asynchronous operations. To handle them properly, JavaScript provides a feature called Promise.
 
@@ -256,7 +256,7 @@ getData()
       console.error("Error:", error);
   });
 
-  17.Fetch API with Promise Chaining
+17. Fetch API with Promise Chaining
 
 JavaScript provides the Fetch API to get data from servers (APIs).
 fetch() returns a Promise, which allows us to handle asynchronous API responses using .then() and .catch().
@@ -281,7 +281,7 @@ Third .then() modifies the title of each object.
 Fourth .then() prints the final data.
 .catch() handles errors if API fails.                            
 
-17 . Working with Public APIs using JavaScript (Fetch, Promises, Filter, Map)
+18. Working with Public APIs using JavaScript (Fetch, Promises, Filter, Map)
 
 🔹 In this task, multiple public REST APIs were used to practice real-time data fetching using JavaScript. The objective was to understand how to:
 
@@ -308,4 +308,55 @@ fetch("API_URL")
   .then(data => data.map(transformation))
   .then(console.log)
   .catch(console.error);
+
+  19. Understanding Async/Await, Promises, Fetch API, and Timers in JavaScript
+
+In this task, practical implementation of asynchronous JavaScript concepts was performed using real APIs and custom Promises. The focus was on understanding how JavaScript handles non-blocking operations using async/await, fetch(), setTimeout, and setInterval.
+
+🔹Concepts Practiced
+1.Creating custom Promises and resolving them using setTimeout
+2.Using async/await with the Fetch API from JSONPlaceholder
+3.Converting Promise chains (.then()) into async/await
+4.Converting objects to JSON strings using JSON.stringify
+5.Parsing JSON strings back to objects using JSON.parse
+6.Understanding and controlling timers using setTimeout, clearTimeout, setInterval, and clearInterval
+
+🔹Custom Promise with setTimeout example
+async function getData() {
+    return await new Promise((resolve, reject) => {
+        if (2 < 3) {
+            setTimeout(() => {
+                resolve("Data received");
+            }, 2000);
+        } else {
+            reject("not working");
+        }
+    });
+}
+
+🔹Fetching Data using Async/Await
+async function getTodos() {
+    const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+    const data = await res.json();
+    return data;
+}
+
+🔹JSON Conversion
+JSON.stringify(obj); // Object → String
+JSON.parse(string);  // String → Object
+
+🔹Timers in JavaScript
+const timeoutId = setTimeout(() => {
+    console.log("Data received");
+}, 5000);
+
+clearTimeout(timeoutId);
+
+const i = setInterval(() => {
+    console.log("Checking for new data...");
+}, 3000);
+
+clearInterval(i);
+
+
 
