@@ -8,6 +8,7 @@ SDET Playwright Training
 let name = "Khushi";
 var age = 22;
 
+
 2. DATA TYPES-Defines type of data stored.
 
 🔹 Types:
@@ -357,6 +358,90 @@ const i = setInterval(() => {
 }, 3000);
 
 clearInterval(i);
+
+20. Object Oriented Programming (OOPS) in JavaScript
+
+During the training, I learned how JavaScript supports Object Oriented Programming using classes, objects, and modern ES6 features. The following core OOPS concepts were implemented with examples.
+
+1) Encapsulation
+
+Encapsulation is the process of hiding internal data and allowing access only through public methods.
+
+🔹Example: BankCard with private PIN
+
+class BankCard {
+    #pin;
+
+    setPin(pin) {
+        if (pin.length === 4 && !isNaN(pin)){
+            this.#pin = pin;
+        }
+    }
+
+    verifyPin(pin) {
+        return pin === this.#pin ? "Access Granted" : "Wrong PIN";
+    }
+}
+
+2) Inheritance
+
+Inheritance allows a child class to reuse properties and methods of a parent class using extends and super.
+
+🔹Example: Vehicle → Car
+
+class Vehicle {
+    constructor(brand) {
+        this.brand = brand;
+    }
+    start() {
+        console.log("Vehicle started");
+    }
+}
+
+class Car extends Vehicle {
+    constructor(brand, model) {
+        super(brand);
+        this.model = model;
+    }
+}
+
+3) Polymorphism
+
+Polymorphism allows the same method name to behave differently depending on the object calling it.
+
+🔹Example: Payment using UPI and Card
+
+class Payment {
+    pay() {}
+}
+
+class UPI extends Payment {
+    pay() {
+        console.log("Paid using UPI");
+    }
+}
+
+class Card extends Payment {
+    pay() {
+        console.log("Paid using Card");
+    }
+}
+
+4) Abstraction
+
+Abstraction hides the internal implementation and exposes only essential functionality.
+
+🔹Example: ATM
+
+class ATM {
+    #authenticate() {}
+    #dispenseCash() {}
+
+    withdraw() {
+        this.#authenticate();
+        this.#dispenseCash();
+    }
+}
 
 
 
