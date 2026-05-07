@@ -363,7 +363,7 @@ clearInterval(i);
 
 During the training, I learned how JavaScript supports Object Oriented Programming using classes, objects, and modern ES6 features. The following core OOPS concepts were implemented with examples.
 
-1) Encapsulation
+1)Encapsulation
 
 Encapsulation is the process of hiding internal data and allowing access only through public methods.
 
@@ -383,7 +383,7 @@ class BankCard {
     }
 }
 
-2) Inheritance
+2)Inheritance
 
 Inheritance allows a child class to reuse properties and methods of a parent class using extends and super.
 
@@ -405,7 +405,7 @@ class Car extends Vehicle {
     }
 }
 
-3) Polymorphism
+3)Polymorphism
 
 Polymorphism allows the same method name to behave differently depending on the object calling it.
 
@@ -427,7 +427,7 @@ class Card extends Payment {
     }
 }
 
-4) Abstraction
+4)Abstraction
 
 Abstraction hides the internal implementation and exposes only essential functionality.
 
@@ -443,5 +443,27 @@ class ATM {
     }
 }
 
+21. Prototype Inheritance -Prototype Inheritance is the mechanism by which JavaScript objects inherit properties and methods from another object through the prototype chain.
 
+🔹Example Code
 
+function Person(name) {
+  this.name = name;
+}
+
+// Method added to prototype (shared by all objects)
+Person.prototype.sayHi = function () {
+  console.log("Hello " + this.name);
+};
+
+// Creating objects
+const p1 = new Person("Shiv");
+const p2 = new Person("Khushi");
+
+// Both objects use the same method from prototype
+p1.sayHi(); // Hello Shiv
+p2.sayHi(); // Hello Khushi
+
+// Proof
+console.log(Object.getPrototypeOf(p1) === Person.prototype); // true
+console.log(p1.sayHi === p2.sayHi); // true
