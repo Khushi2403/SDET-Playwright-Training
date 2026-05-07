@@ -467,3 +467,102 @@ p2.sayHi(); // Hello Khushi
 // Proof
 console.log(Object.getPrototypeOf(p1) === Person.prototype); // true
 console.log(p1.sayHi === p2.sayHi); // true
+
+22.  Callback Function
+
+🔹Definition:A callback is a function passed as an argument to another function, which is executed later.
+
+🔹Snippet:
+
+function greet(name, callback) {
+  console.log("Hello " + name);
+  callback();
+}
+
+function bye() {
+  console.log("Goodbye!");
+}
+
+greet("Khushi", bye);
+
+23. Higher-Order Function (HOF)
+
+🔹Definition:
+A higher-order function is a function that takes another function as a parameter or returns a function.
+
+🔹Snippet:
+
+[1, 2, 3].forEach(function(e) {
+  console.log(e);
+});
+
+forEach is a HOF because it accepts a function.
+
+24. Stack Memory
+
+🔹Definition:
+Stack memory stores primitive data types and the actual values directly.
+
+🔹Snippet:
+
+let age = 25;
+let name = "Khushi";
+
+25. 4) Heap Memory
+
+🔹Definition:
+Heap memory stores reference data types like objects and arrays. Variables store references (addresses).
+
+🔹Snippet:
+
+let user = {
+  name: "Khushi",
+  age: 25
+};
+
+26. Primitive Copy (Value Copy)
+
+🔹Definition:
+When copying primitives, the actual value is copied. Changes do not affect the original.
+
+🔹Snippet:
+
+let x = 10;
+let y = x;
+y = 20;
+
+console.log(x); // 10
+
+27. Reference Copy
+
+🔹Definition:
+When copying objects/arrays, the reference is copied. Changes affect the original.
+
+🔹Snippet:
+
+let obj1 = { name: "Khushi" };
+let obj2 = obj1;
+
+obj2.name = "Shiv";
+console.log(obj1.name); // Shiv
+
+28. Spread Operator with Objects
+
+🔹Definition:
+The spread operator copies properties of objects into a new object.
+
+🔹Snippet:
+
+const obj1 = { name: "Khushi" };
+const obj2 = { age: 25 };
+
+const obj3 = { ...obj1, ...obj2 };
+
+29. Anonymous Callback Function
+
+🔹Definition:
+A callback function without a name, written directly inside another function.
+
+🔹Snippet:
+
+[1, 2, 3].forEach(e => console.log(e));
