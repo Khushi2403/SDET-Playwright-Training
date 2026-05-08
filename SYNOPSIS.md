@@ -566,3 +566,114 @@ A callback function without a name, written directly inside another function.
 🔹Snippet:
 
 [1, 2, 3].forEach(e => console.log(e));
+
+30) Hoisting: let vs var
+🔹 Definition:
+Hoisting is JavaScript’s default behavior of moving declarations to the top of the scope before code execution.
+🔹 Snippet (let — TDZ):
+console.log(greet); // ReferenceErrorlet greet = "Hello, World!";
+🔹 Snippet (var — undefined):
+console.log(greet); // undefinedvar greet = "Hello, World!";
+🔹 Points:
+let is hoisted but not initialized (Temporal Dead Zone).
+Accessing let before declaration throws a ReferenceError.
+var is hoisted and initialized as undefined.
+Accessing var before assignment does not throw an error.
+
+
+31) Function Hoisting vs Arrow Function
+🔹 Definition:
+Function declarations are fully hoisted, while arrow functions behave like variables.
+🔹 Snippet (Function Declaration):
+sayHi();function sayHi() {  console.log("Hello, World!");}
+🔹 Snippet (Arrow Function):
+sayHi(); // TypeErrorvar sayHi = () => {  console.log("Hello");};
+🔹 Points:
+Function declarations can be called before definition.
+Arrow functions are hoisted as undefined.
+Calling an arrow function before assignment causes TypeError.
+
+
+
+32) Constructor Function and Prototype
+🔹 Definition:
+A function used with new becomes a constructor and shares methods through its prototype.
+🔹 Snippet:
+function Start() {  console.log("VroomVroom");}const c1 = new Start();const c2 = new Start();Start.prototype.stop = function () {  console.log("Stop");};c1.stop();c2.stop();
+🔹 Points:
+new creates objects linked to Start.prototype.
+Methods added to the prototype are shared by all instances.
+Saves memory by avoiding duplicate method copies.
+
+
+
+33) Plain Object vs Constructor Prototype
+🔹 Definition:
+An object literal is not connected to any constructor’s prototype.
+🔹 Snippet:
+const car = {  brand: "Tesla",  start: () => console.log("VroomVroom"),};
+🔹 Points:
+This is a simple object.
+It has no relation to Start.prototype.
+
+
+
+34) Prototypal Inheritance using Object.create()
+🔹 Definition:
+Object.create() creates a new object with a specified prototype.
+🔹 Snippet:
+const animal = { eats: true };const rabbit = Object.create(animal);rabbit.carrot = () => console.log("He is eating carrot");
+🔹 Points:
+rabbit inherits properties from animal.
+Prototype chain: rabbit → animal → Object.prototype → null.
+
+
+
+35) Own Property vs Inherited Property
+🔹 Snippet:
+console.log(rabbit.eats); // trueconsole.log(rabbit.hasOwnProperty("eats"));   // falseconsole.log(rabbit.hasOwnProperty("carrot")); // true
+🔹 Points:
+eats is inherited from animal.
+carrot is an own property of rabbit.
+hasOwnProperty() checks only own properties.
+
+
+36) toString() from Object.prototype
+🔹 Snippet:
+console.log(rabbit.toString());
+🔹 Points:
+Method comes from Object.prototype.
+Every JavaScript object inherits from Object.prototype.
+
+37) Final Prototype Chains
+🔹 Snippet:
+
+function Start() {}
+Start.prototype.stop = function () {};
+
+const animal = { eats: true };
+const rabbit = Object.create(animal);
+
+const c1 = new Start();
+const c2 = new Start();
+
+🔹 Rabbit Prototype Chain:
+
+rabbit — own object
+animal — prototype of rabbit
+Object.prototype — default parent of all objects
+null — end of prototype chain
+
+🔹 c1 / c2 Prototype Chain:
+
+c1 / c2 — objects created using new Start()
+Start.prototype — shared prototype for all instances
+Object.prototype — default parent of all objects
+null — end of prototype chain
+
+
+
+
+
+
+
