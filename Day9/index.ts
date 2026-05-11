@@ -75,21 +75,36 @@ console.log("Array:", arr);
 
 // console.log(stringBag, numberBag);
 
-class Storage<T> {
-    private items: T[] = [];
+// class Storage<T> {
+//     private items: T[] = [];
 
-    addItems(item: T): void { // no return type
-        this.items.push(item);
-    }
+//     addItems(item: T): void { // no return type
+//         this.items.push(item);
+//     }
 
-    getItem(index: number): T {
-        return this.items[index]!; // non-null assertion operator to indicate that the item will exist at the given index
-    }
+//     getItem(index: number): T {
+//         return this.items[index]!; // non-null assertion operator to indicate that the item will exist at the given index
+//     }
+// }
+
+// const names = new Storage<string>();
+// names.addItems("Khushi");
+// names.addItems("shiv");
+// names.addItems("sanju");
+
+// console.log(names.getItem(0), names.getItem(1), names.getItem(2), names.getItem(3)); // undefined for index 3
+
+
+
+interface HasLength {
+    length: number;
 }
 
-const names = new Storage<string>();
-names.addItems("Khushi");
-names.addItems("shiv");
-names.addItems("sanju");
+// generics with contraints | extends keyword
+function logLength<T extends HasLength>(arg: T): void { // T -> property .length --> string, arrays
+    console.log(arg.length);
+}
 
-console.log(names.getItem(0), names.getItem(1), names.getItem(2), names.getItem(3)); // undefined for index 3
+logLength("playwright training"); // string --> length
+logLength([1, 2, 3]); // array --> length
+// logLength(10); // number --> X
