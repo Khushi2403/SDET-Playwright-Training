@@ -32,17 +32,17 @@ enum Role {
 
 const user: Person = {
     id: 1,
-    name: "Aaryan",
-    age: 25,
+    name: "khushi",
+    age: 23,
     role: Role.User,
-    email: "aaryan@gmail.com"
+    email: "khushi@gmail.com"
 };
 
 const admin: Person = {
     id: 2,
-    name: "Arush",
+    name: "shiv",
     age: 30,
-    email: "arush@gmail.com",
+    email: "shiv123@gmail.com",
     role: Role.Admin,
     isAdmin: true
 };
@@ -60,7 +60,7 @@ console.log("Array:", arr);
 // }
 
 // let output = identity<number>(10);
-// let outpu1 = identity<string>("Aaryan");
+// let outpu1 = identity<string>("khushi");
 // let outpu2 = identity<boolean>(true);
 
 // console.log(output, outpu1, outpu2);
@@ -88,8 +88,8 @@ class Storage<T> {
 }
 
 const names = new Storage<string>();
-names.addItems("Aaryan");
-names.addItems("Arush");
-names.addItems("Rohan");
+names.addItems("Khushi");
+names.addItems("shiv");
+names.addItems("sanju");
 
 console.log(names.getItem(0), names.getItem(1), names.getItem(2), names.getItem(3)); // undefined for index 3
