@@ -123,10 +123,44 @@ function setUnitTypes(value:MarginValue){
 setUnitTypes("10px");
 setUnitTypes("10vh");
 setUnitTypes("10rem");
-setUnitTypes("10");
-setUnitTypes("abcd");
-setUnitTypes("px");
+// setUnitTypes("10");
+// setUnitTypes("abcd");
+// setUnitTypes("px");
 
+//6 Conditional Types & the infer Keyword
+
+type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
+
+async function getNumber(): Promise<number> {
+  return 100;
+}
+
+async function getUser(): Promise<{ id: number; name: string }> {
+  return { id: 1, name: "Khushi" };
+}
+
+function getBoolean(): boolean {
+  return true;
+}
+
+type NumberType = UnwrapPromise<ReturnType<typeof getNumber>>;
+type UserType = UnwrapPromise<ReturnType<typeof getUser>>;
+type BooleanType = UnwrapPromise<ReturnType<typeof getBoolean>>;
+
+const num: NumberType = 500; // must be number
+const user: UserType = { id: 10, name: "Aman" }; // must match object
+const flag: BooleanType = false; // must be boolean
+
+async function demo() {
+  const n = await getNumber();
+  const u = await getUser();
+  const b = getBoolean();
+
+  console.log("Number:", n);
+  console.log("User:", u);
+  console.log("Boolean:", b);
+}
+demo();
 // 7. The Union Manipulation Puzzle
 
 type AllEvents = 'click' | 'dbclick' | 'submit' | 'reset' | 'keypress';
@@ -152,6 +186,32 @@ console.log("Mouse Event:", ev1);
 console.log("Non Form Event:", ev2);
 
 // 8. Async Higher-Order Function (HOF)
+function safeExecute<Args extends any[], T>(asyncFnc: (...args: Args) => Promise<T>) {
+    return async (...args: Args): Promise<T | null> => {
+        try {
+            return await asyncFnc(...args);
+        } catch (err) {
+            console.error(err);
+            return null;
+        }
+    }
+}
+
+const info = async (id: number): Promise<string> => {
+    if(id === -1) throw new Error("Invalid ID");
+    return `Data for ID: ${id}`
+}
+
+
+async function dryRun() {
+    const getData = safeExecute(info);
+    const res = await getData(10);
+    const res1 = await getData(0);
+    const res2 = await getData(-1);
+    console.log(res, res1, res2);
+}
+
+dryRun();
 
 
 // 9. Index Signatures for Dynamic Metadata
