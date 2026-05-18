@@ -83,3 +83,10 @@ test('login and verify products page', async ({ page }) => {
   await expect(page.getByText('Products')).toBeVisible();
 });
 
+
+## Day-wise Detailed Synopsis
+
+1. [Day 13 — Synopsis](Day13/Day13_synopsis.md)
+2. [Day 14 — Synopsis](Day14/Day14_synopsis.md)
+3. [Day 15 — Synopsis](Day15/Day15_synopsis.md)
+
